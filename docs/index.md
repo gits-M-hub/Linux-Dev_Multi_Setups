@@ -1,20 +1,18 @@
-# 📚 Índice de Documentación
+# Índice de Documentación
 
-Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
+Documentación del entorno de desarrollo Linux.
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Guías de Terminal](#guías-de-terminal)
 - [Docker](#docker)
 - [PostgreSQL](#postgresql)
 - [Configuración e Instalación](#configuración-e-instalación)
-- [Herramientas de IA](#herramientas-de-ia)
 - [Guías de Supervivencia](#guías-de-supervivencia)
-- [Próximamente](#próximamente)
 
 ---
 
-## 🖥️ Guías de Terminal
+## Guías de Terminal
 
 ### Navegación
 
@@ -44,24 +42,15 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
 
 ---
 
-## 🐳 Docker
+## Docker
 
 ### Alias de Docker
 
 - [`docker-aliases.md`](docker-aliases.md) - Documentación completa de alias de Docker
-  - Comandos básicos (`d`, `dc`)
-  - Gestión de contenedores (`dps`, `dpsa`, `dstop`)
-  - Gestión de imágenes (`di`, `dpull`, `dpush`)
-  - Gestión de volúmenes (`dvol`, `dvolrm`)
-  - Gestión de redes (`dnet`, `dnetcreate`)
-  - Limpieza (`dprune`, `dprunea`)
-  - Ejecución en contenedores (`dex`, `dsh`, `dshz`)
-  - Docker Compose (`dce`, `dcb`, `dcu`, `dcd`, `dcp`, `dcl`, `dclf`)
-  - Estadísticas e inspección (`dstats`, `dinsp`)
 
 ---
 
-## 🐘 PostgreSQL
+## PostgreSQL
 
 ### Instalación
 
@@ -90,99 +79,29 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
 
 ---
 
-## ⚙️ Configuración e Instalación
+## Configuración e Instalación
 
 ### Herramientas Instaladas
 
 - [`setup/installed-tools.md`](setup/installed-tools.md) - Lista completa de herramientas instaladas
-  - Terminal (Zsh, Oh My Zsh, Starship, etc.)
-  - Desarrollo (Git, Docker, Java, Kotlin, VS Code)
-  - Gestores (SDKMAN!)
-  - Scripts propios
 
 ### Guías de Instalación
 
-- [`setup/multi-distro-support.md`](setup/multi-distro-support.md) - Soporte multi-distribución (Arch, Fedora, Debian)
+- [`setup/multi-distro-support.md`](setup/multi-distro-support.md) - Soporte multi-distribución (Arch, Fedora, Debian, Kali)
+- [`setup/kali-linux.md`](setup/kali-linux.md) - Configuración específica de Kali Linux
 - [`setup/install-git.md`](setup/install-git.md) - Guía de instalación de Git
-  - Instalación desde repositorio o fuente
-  - Configuración inicial
-  - Configuración de SSH con GitHub
-  - Configuración adicional y alias
 - [`setup/install-docker.md`](setup/install-docker.md) - Guía de instalación de Docker
-  - Instalación desde repositorio oficial
-  - Configuración post-instalación
-  - Docker Compose
-  - Solución de problemas
 - [`setup/install-sdkman.md`](setup/install-sdkman.md) - Guía de instalación de SDKMAN!
-  - Instalación y configuración
-  - Gestión de Java, Kotlin y Gradle
-  - Gestión de múltiples versiones
 - [`setup/install-vscode.md`](setup/install-vscode.md) - Guía de instalación de VS Code
-  - Instalación desde repositorio oficial
-  - Configuración básica
-  - Extensiones recomendadas
-  - Atajos de teclado
 - [`setup/install-terminal-tools.md`](setup/install-terminal-tools.md) - Guía de instalación de herramientas de terminal
-  - Zsh, Oh My Zsh, Starship
-  - Tree, Bat, Btop
-  - LazyGit, Yazi
-  - Ripgrep, fd
 
 ---
 
-## 🤖 Herramientas de IA
-
-### Índice de IA
-
-- [`ai/README.md`](ai/README.md) - Introducción a las herramientas de IA
-  - Claude Code
-  - Codex
-  - Gemini
-  - Prompts
-
-### Documentos Específicos
-
-- [`ai/claude.md`](ai/claude.md) - Guía de Claude Code
-- [`ai/codex.md`](ai/codex.md) - Guía de Codex
-- [`ai/gemini.md`](ai/gemini.md) - Guía de Gemini
-- [`ai/prompts.md`](ai/prompts.md) - Prompts útiles para IA
-
----
-
-## 🆘 Guías de Supervivencia
+## Guías de Supervivencia
 
 ### Linux Survival Guide
 
 - [`linux-survival-guide.md`](linux-survival-guide.md) - Lecciones aprendidas y tips esenciales
-  - Cómo salir de comandos que "atrapan" la terminal
-  - Verificar el directorio actual antes de crear archivos
-  - Comandos de emergencia
-
----
-
-## 🚧 Próximamente
-
-Documentación en desarrollo:
-
-- [ ] Git avanzado
-- [ ] Docker completo
-- [ ] Java/Kotlin setup
-- [ ] Android Studio
-- [ ] VS Code configuración
-- [ ] IA detallada
-- [ ] Troubleshooting
-- [ ] Scripts automatizados
-- [ ] Cheatsheets
-
----
-
-## 📝 Filosofía de Documentación
-
-Cada documento intenta responder tres preguntas fundamentales:
-
-1. **¿Qué es?** - Descripción clara de la herramienta o concepto
-2. **¿Por qué lo uso?** - Justificación y beneficios
-3. **¿Cómo lo utilizo?** - Ejemplos prácticos y comandos
 
 ---
 

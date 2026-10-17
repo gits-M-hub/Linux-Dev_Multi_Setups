@@ -1,25 +1,82 @@
-# 🌍 Soporte Multi-Distribución
+# Soporte Multi-Distribución
 
-Este proyecto ahora soporta múltiples distribuciones de Linux, permitiendo que el entorno de desarrollo sea reproducible en diferentes sistemas.
+Este proyecto soporta múltiples distribuciones de Linux, permitiendo que el entorno de desarrollo sea reproducible en diferentes sistemas.
 
-## 📋 Distribuciones Soportadas
+## Distribuciones Soportadas
 
 ### Familia Debian
-- ✅ Ubuntu (todas las versiones)
-- ✅ Pop!_OS
-- ✅ Linux Mint
-- ✅ Kubuntu
-- ✅ Xubuntu
-- ✅ Debian
+- Ubuntu (todas las versiones)
+- Pop!_OS
+- Linux Mint
+- Kubuntu
+- Xubuntu
+- Debian
+
+### Kali Linux
+- Kali Linux (con herramientas de hacking opcionales)
 
 ### Familia Arch
-- ✅ Arch Linux
-- ✅ Manjaro
+- Arch Linux
+- Manjaro
 
 ### Familia Fedora
-- ✅ Fedora
-- ✅ RHEL (Red Hat Enterprise Linux)
-- ✅ CentOS
+- Fedora
+- RHEL (Red Hat Enterprise Linux)
+- CentOS
+
+## Kali Linux - Configuración Especial
+
+Kali Linux tiene una configuración especial optimizada para hacking y pentesting:
+
+### Características Específicas de Kali
+
+**Herramientas de Desarrollo (mantenidas):**
+- Zsh, Oh My Zsh, Starship
+- LazyGit, Yazi
+- Docker
+- VS Code
+- GCC
+- Git
+
+**Herramientas NO instaladas (innecesarias para hacking):**
+- Java/Kotlin/SDKMAN
+- PostgreSQL
+
+**Herramientas de Hacking (opcionales):**
+
+El script de Kali permite seleccionar entre 4 perfiles:
+
+1. **Todas las herramientas (all):**
+   - Pentesting: Nmap, Metasploit, Nikto, OWASP ZAP
+   - Análisis de Red: Wireshark, tcpdump, netcat, mitmproxy
+   - Web Hacking: sqlmap, dirb, gobuster, ffuf, wpscan
+
+2. **Solo Pentesting (pentesting):**
+   - Nmap, Metasploit, Nikto, OWASP ZAP
+
+3. **Solo Análisis de Red (network):**
+   - Wireshark, tcpdump, netcat, mitmproxy
+
+4. **Solo Web Hacking (web):**
+   - sqlmap, dirb, gobuster, ffuf, wpscan
+
+### Instalación en Kali Linux
+
+```bash
+git clone https://github.com/gits-M-hub/Linux_Pop_Os-Dev-Setup.git ~/Projects/linux-dev-setup
+cd ~/Projects/linux-dev-setup
+./scripts/install/setup.sh
+```
+
+El script detectará automáticamente Kali Linux y te pedirá seleccionar el perfil de herramientas de hacking.
+
+### Notas Importantes
+
+- Kali Linux viene con muchas herramientas de hacking preinstaladas
+- Este script añade herramientas base de desarrollo y permite instalar herramientas adicionales según el perfil
+- Burp Suite Community requiere instalación manual desde el sitio web de PortSwigger
+- Para usar Wireshark sin sudo, necesitas cerrar sesión y volver a entrar (se añade al grupo wireshark)
+- Todas las herramientas deben usarse de manera ética y responsable
 
 ## 🚀 Instalación
 
@@ -34,7 +91,7 @@ cd ~/Projects/linux-dev-setup
 ./scripts/install/setup.sh
 ```
 
-## 📁 Estructura de Scripts
+## Estructura de Scripts
 
 ```
 scripts/install/
@@ -43,6 +100,11 @@ scripts/install/
 │   ├── setup.sh
 │   ├── install-base-tools.sh
 │   └── install-dev-tools.sh
+├── kali/                      # Scripts para Kali Linux
+│   ├── setup.sh
+│   ├── install-base-tools.sh
+│   ├── install-dev-tools.sh
+│   └── install-hacking-tools.sh
 ├── arch/                      # Scripts para Arch Linux/Manjaro
 │   ├── setup.sh
 │   ├── install-base-tools.sh
@@ -60,10 +122,20 @@ scripts/install/
 | Familia | Gestor | Ejemplo |
 |---------|--------|---------|
 | Debian | apt | `sudo apt install paquete` |
+| Kali | apt | `sudo apt install paquete` |
 | Arch | pacman | `sudo pacman -S paquete` |
 | Fedora | dnf | `sudo dnf install paquete` |
 
 ### Herramientas Específicas
+
+**Kali Linux:**
+- Usa `apt` como gestor principal (basado en Debian)
+- Viene con muchas herramientas de hacking preinstaladas
+- NO instala Java/Kotlin/SDKMAN ni PostgreSQL (innecesarios para hacking)
+- Mantiene GCC, Docker, VS Code, y herramientas de terminal
+- Permite seleccionar perfil de herramientas de hacking (all, pentesting, network, web)
+- `bat` → `batcat` (requiere symlink)
+- `fd-find` → `fdfind` (requiere symlink)
 
 **Arch Linux:**
 - Usa `yay` como AUR helper para paquetes adicionales

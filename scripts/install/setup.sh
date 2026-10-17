@@ -53,6 +53,10 @@ detect_distro() {
             DISTRO_FAMILY="debian"
             DISTRO_NAME="$NAME"
             ;;
+        kali)
+            DISTRO_FAMILY="kali"
+            DISTRO_NAME="$NAME"
+            ;;
         arch|manjaro)
             DISTRO_FAMILY="arch"
             DISTRO_NAME="$NAME"
@@ -83,6 +87,10 @@ main() {
             print_success "Ejecutando script para Debian/Ubuntu/Pop!_OS..."
             bash "$HOME/Projects/linux-dev-setup/scripts/install/debian/setup.sh"
             ;;
+        kali)
+            print_success "Ejecutando script para Kali Linux..."
+            bash "$HOME/Projects/linux-dev-setup/scripts/install/kali/setup.sh"
+            ;;
         arch)
             print_success "Ejecutando script para Arch Linux/Manjaro..."
             bash "$HOME/Projects/linux-dev-setup/scripts/install/arch/setup.sh"
@@ -95,6 +103,7 @@ main() {
             print_error "Distribución no soportada: $DISTRO_NAME"
             print_info "Distribuciones soportadas:"
             echo "  - Ubuntu, Pop!_OS, Linux Mint, Debian"
+            echo "  - Kali Linux"
             echo "  - Arch Linux, Manjaro"
             echo "  - Fedora, RHEL, CentOS"
             exit 1

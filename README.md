@@ -1,22 +1,13 @@
-# 🚀 Linux Multi-Distro Dev Setup
+# Linux Multi-Distro Dev Setup
 
-Un entorno de desarrollo reproducible, organizado y documentado para **múltiples distribuciones de Linux**, pensado para desarrollo de software moderno con énfasis en:
+Entorno de desarrollo reproducible para múltiples distribuciones de Linux.
 
-- ☕ Java
-- 🟣 Kotlin
-- 📱 Android
-- 🌐 Desarrollo Web
-- 🐳 Docker
-- 🌿 Git
-- 💻 VS Code
-- 🤖 Herramientas de IA
-- 🐧 Linux
+Enfoque en: Java, Kotlin, Android, Desarrollo Web, Docker, Git, VS Code y Linux.
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Estructura](#estructura)
 - [Documentación](#documentación)
-- [Documentación del Proyecto](#documentación-del-proyecto)
 - [Herramientas Instaladas](#herramientas-instaladas)
 - [Scripts](#scripts)
 - [Licencia](#licencia)
@@ -24,26 +15,25 @@ Un entorno de desarrollo reproducible, organizado y documentado para **múltiple
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
-Este repositorio tiene como finalidad:
+- Documentar un entorno de desarrollo
+- Centralizar configuraciones, scripts y documentación
+- Versionar cambios importantes
+- Automatizar la instalación del entorno
 
-- **Documentar completamente** un entorno de desarrollo
-- **Centralizar** configuraciones, scripts y documentación
-- **Versionar** todos los cambios importantes
-- **Automatizar la instalación** del entorno completo
+Setup reproducible para reinstalar rápidamente el entorno en múltiples distribuciones de Linux.
 
-Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en múltiples distribuciones de Linux rápidamente cuando sea necesario.
+## Distribuciones Soportadas
 
-## 🌍 Distribuciones Soportadas
-
-- ✅ **Debian/Ubuntu:** Ubuntu, Pop!\_OS, Linux Mint, Debian
-- ✅ **Arch Linux:** Arch Linux, Manjaro
-- ✅ **Fedora:** Fedora, RHEL, CentOS
+- Debian/Ubuntu: Ubuntu, Pop!_OS, Linux Mint, Debian
+- Kali Linux: Kali (con herramientas de hacking opcionales)
+- Arch Linux: Arch Linux, Manjaro
+- Fedora: Fedora, RHEL, CentOS
 
 El script detecta automáticamente tu distribución y ejecuta la instalación correspondiente.
 
-## 🚀 Instalación Rápida
+## Instalación Rápida
 
 Para instalar el entorno completo, ejecuta:
 
@@ -59,13 +49,13 @@ cd ~/Projects/linux-dev-setup
 El script instalará automáticamente:
 
 - Herramientas base (Zsh, Oh My Zsh, Starship, LazyGit, Yazi)
-- Herramientas de desarrollo (SDKMAN, Java, Kotlin, Docker, VS Code, PostgreSQL)
+- Herramientas de desarrollo (SDKMAN, Java, Kotlin, Docker, VS Code, PostgreSQL, GCC)
 - Configuraciones (Zsh, Starship, Git, VS Code)
 - Alias de terminal
 
----
+**Nota para Kali Linux:** En Kali se omiten Java/Kotlin/SDKMAN y PostgreSQL, pero se añaden herramientas de hacking opcionales.
 
-## 📁 Estructura
+## Estructura
 
 ```
 linux-dev-setup/
@@ -76,14 +66,17 @@ linux-dev-setup/
 │   ├── starship/     # Configuración de Starship
 │   ├── vscode/       # Configuración de VS Code
 │   └── zsh/          # Configuración de Zsh
-├── docs/              # Documentación completa
-│   ├── ai/           # Herramientas de IA
+├── docs/              # Documentación
 │   ├── postgresql/   # Guías de PostgreSQL
 │   ├── setup/        # Guías de instalación
 │   └── terminal/     # Comandos y herramientas
 ├── scripts/          # Scripts de automatización
 │   ├── docker/       # Scripts de Docker
 │   └── install/      # Scripts de instalación
+│       ├── debian/   # Scripts para Debian/Ubuntu
+│       ├── kali/     # Scripts para Kali Linux
+│       ├── arch/     # Scripts para Arch Linux
+│       └── fedora/   # Scripts para Fedora
 ├── .gitignore        # Archivos ignorados por Git
 ├── LICENSE           # Licencia del proyecto
 └── README.md         # Este archivo
@@ -91,26 +84,23 @@ linux-dev-setup/
 
 ---
 
-## 📚 Documentación
+## Documentación
 
 Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 
-**Comienza por:**
+Comienza por [`docs/index.md`](/docs/index.md) - Índice principal de la documentación.
 
-- [`docs/index.md`](/docs/index.md) - Índice principal de la documentación
+Documentación disponible:
 
-**Documentación disponible:**
-
-[`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
-[`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
-[`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
-[`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
-[`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminal
-[`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
+- [`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
+- [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
+- [`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
+- [`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminal
+- [`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
 
 ---
 
-## 📖 Documentación del Proyecto
+## Documentación del Proyecto
 
 Documentación para contribuidores y usuarios del proyecto:
 
@@ -118,17 +108,9 @@ Documentación para contribuidores y usuarios del proyecto:
 - [`CHANGELOG.md`](CHANGELOG.md) - Historial de cambios por versión
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) - Código de conducta de la comunidad
 
-**Para estudiantes:**
-
-- Si eres estudiante y quieres contribuir, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md) para una guía paso a paso
-- No temas hacer preguntas o contribuir con cambios pequeños
-- Cada contribución cuenta, sin importar el tamaño
-
 ---
 
-## 🛠️ Herramientas Instaladas
-
-Actualmente el entorno incluye:
+## Herramientas Instaladas
 
 ### Desarrollo
 
@@ -139,6 +121,7 @@ Actualmente el entorno incluye:
 - Kotlin
 - Gradle
 - VS Code
+- GCC
 
 ### Terminal
 
@@ -155,7 +138,7 @@ Para más detalles, consulta [`docs/setup/installed-tools.md`](/docs/setup/insta
 
 ---
 
-## 📜 Scripts
+## Scripts
 
 Los scripts del proyecto se encuentran en [`scripts/`](/scripts/).
 
@@ -178,29 +161,25 @@ Los scripts del proyecto se encuentran en [`scripts/`](/scripts/).
 - `scripts/doctor.sh` - Script de verificación del sistema
 - `scripts/update-system.sh` - Actualización del sistema
 
----
+## Filosofía
 
-## 💡 Filosofía
-
-Este proyecto sigue algunos principios:
-
-- **Configuración reproducible** - Todo debe poder recrearse fácilmente
-- **Documentación clara** - Cada herramienta y configuración está documentada
-- **Automatización antes que repetición** - Scripts para tareas repetitivas
-- **Uso de herramientas oficiales** - Preferir herramientas estándar y bien mantenidas
-- **Aprender el porqué** - Entender la razón detrás de cada herramienta
+- Configuración reproducible
+- Documentación clara
+- Automatización antes que repetición
+- Uso de herramientas oficiales
+- Entender el porqué
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](/LICENSE) para más detalles.
 
 ---
 
-## 🤝 Contribuir
+## Contribuir
 
-¡Las contribuciones son bienvenidas! Si quieres contribuir al proyecto:
+Las contribuciones son bienvenidas:
 
 1. Lee la [guía para contribuidores](CONTRIBUTING.md)
 2. Revisa el [código de conducta](CODE_OF_CONDUCT.md)
@@ -208,8 +187,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](/LICENSE) pa
 4. Haz fork del repositorio y crea una rama para tu feature
 5. Envía un pull request con descripción clara
 
-**Para estudiantes:** Este proyecto es especialmente amigable con estudiantes que están aprendiendo. Revisa la sección para estudiantes en [CONTRIBUTING.md](CONTRIBUTING.md) para más información.
-
 ---
-
-**Última actualización:** 2026
