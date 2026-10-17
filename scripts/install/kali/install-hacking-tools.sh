@@ -47,6 +47,9 @@ HACKING_PROFILE="$1"
 
 if [ -z "$HACKING_PROFILE" ]; then
     print_error "No se especificó perfil de hacking"
+    print_info "Este script debe ejecutarse desde setup.sh"
+    print_info "Uso: ./install-hacking-tools.sh <perfil>"
+    print_info "Perfiles disponibles: all, pentesting, network, web"
     exit 1
 fi
 
