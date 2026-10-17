@@ -8,6 +8,10 @@
 
 set -e
 
+# Obtener la ruta del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
 # Colores para output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -85,19 +89,19 @@ main() {
     case "$DISTRO_FAMILY" in
         debian)
             print_success "Ejecutando script para Debian/Ubuntu/Pop!_OS..."
-            bash "$HOME/Projects/linux-dev-setup/scripts/install/debian/setup.sh"
+            bash "$PROJECT_ROOT/scripts/install/debian/setup.sh"
             ;;
         kali)
             print_success "Ejecutando script para Kali Linux..."
-            bash "$HOME/Projects/linux-dev-setup/scripts/install/kali/setup.sh"
+            bash "$PROJECT_ROOT/scripts/install/kali/setup.sh"
             ;;
         arch)
             print_success "Ejecutando script para Arch Linux/Manjaro..."
-            bash "$HOME/Projects/linux-dev-setup/scripts/install/arch/setup.sh"
+            bash "$PROJECT_ROOT/scripts/install/arch/setup.sh"
             ;;
         fedora)
             print_success "Ejecutando script para Fedora/RHEL/CentOS..."
-            bash "$HOME/Projects/linux-dev-setup/scripts/install/fedora/setup.sh"
+            bash "$PROJECT_ROOT/scripts/install/fedora/setup.sh"
             ;;
         *)
             print_error "Distribución no soportada: $DISTRO_NAME"

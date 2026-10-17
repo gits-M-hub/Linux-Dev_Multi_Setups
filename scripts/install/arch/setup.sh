@@ -8,6 +8,10 @@
 
 set -e
 
+# Obtener la ruta del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../" && pwd)"
+
 # Colores para output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -316,7 +320,7 @@ configure_zsh() {
     
     # Instalar alias
     print_info "Instalando alias..."
-    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh"
+    "$PROJECT_ROOT/scripts/install/install-aliases.sh"
 }
 
 # Configurar Starship
@@ -333,10 +337,10 @@ configure_starship() {
     fi
     
     # Copiar configuración de starship si existe
-    if [ -f "$HOME/Projects/linux-dev-setup/configs/starship/starship.toml" ]; then
+    if [ -f "$PROJECT_ROOT/configs/starship/starship.toml" ]; then
         print_info "Copiando configuración de Starship..."
         mkdir -p "$HOME/.config"
-        cp "$HOME/Projects/linux-dev-setup/configs/starship/starship.toml" "$HOME/.config/starship.toml"
+        cp "$PROJECT_ROOT/configs/starship/starship.toml" "$HOME/.config/starship.toml"
         print_success "Configuración de Starship copiada"
     fi
 }

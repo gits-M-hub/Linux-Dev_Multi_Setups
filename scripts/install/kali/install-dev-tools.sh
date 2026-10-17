@@ -12,6 +12,10 @@
 
 set -e
 
+# Obtener la ruta del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../" && pwd)"
+
 # Colores para output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -123,8 +127,8 @@ print_success "Git configurado"
 
 # Instalar alias
 print_header "Instalando Alias"
-if [ -f "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" ]; then
-    bash "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh"
+if [ -f "$PROJECT_ROOT/scripts/install/install-aliases.sh" ]; then
+    bash "$PROJECT_ROOT/scripts/install/install-aliases.sh"
     print_success "Alias instalados"
 else
     print_warning "Script de alias no encontrado, saltando..."

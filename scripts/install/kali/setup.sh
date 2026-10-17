@@ -8,6 +8,10 @@
 
 set -e
 
+# Obtener la ruta del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../" && pwd)"
+
 # Colores para output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -137,13 +141,13 @@ main() {
     print_header "Iniciando Instalación"
 
     # Script de instalación base
-    bash "$HOME/Projects/linux-dev-setup/scripts/install/kali/install-base-tools.sh"
+    bash "$PROJECT_ROOT/scripts/install/kali/install-base-tools.sh"
 
     # Script de instalación de herramientas de desarrollo
-    bash "$HOME/Projects/linux-dev-setup/scripts/install/kali/install-dev-tools.sh"
+    bash "$PROJECT_ROOT/scripts/install/kali/install-dev-tools.sh"
 
     # Script de instalación de herramientas de hacking
-    bash "$HOME/Projects/linux-dev-setup/scripts/install/kali/install-hacking-tools.sh" "$HACKING_PROFILE"
+    bash "$PROJECT_ROOT/scripts/install/kali/install-hacking-tools.sh" "$HACKING_PROFILE"
 
     print_header "Instalación Completada"
 

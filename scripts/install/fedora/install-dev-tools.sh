@@ -11,6 +11,10 @@
 
 set -e
 
+# Obtener la ruta del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../" && pwd)"
+
 # Colores para output
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -188,12 +192,12 @@ print_success "Git configurado"
 
 # Instalar alias
 print_header "Instalando Alias"
-if [ -f "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" ]; then
+if [ -f "$PROJECT_ROOT/scripts/install/install-aliases.sh" ]; then
     print_info "Ejecutando script de instalación de alias (Fedora)..."
-    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" --fedora
+    "$PROJECT_ROOT/scripts/install/install-aliases.sh" --fedora
     print_success "Alias instalados"
 else
-    print_warning "Script de instalación de alias no encontrado en $HOME/Projects/linux-dev-setup"
+    print_warning "Script de instalación de alias no encontrado en $PROJECT_ROOT"
 fi
 
 print_header "Instalación Completada"
